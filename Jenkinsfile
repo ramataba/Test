@@ -21,7 +21,7 @@ pipeline {
         
         script {
           openshift.withCluster() {
-            openshift.withProject("rhn-gps-tolarewa-dev") {
+            openshift.withProject("patrick-pereira-dev") {
                 def buildConfigExists = openshift.selector("bc", "codelikethewind").exists()
 
                 if(!buildConfigExists){
@@ -41,7 +41,7 @@ pipeline {
         echo 'Deploying....'
         script {
           openshift.withCluster() {
-            openshift.withProject("rhn-gps-tolarewa-dev") {
+            openshift.withProject("patrick-pereira-dev") {
 
               def deployment = openshift.selector("dc", "codelikethewind")
 
